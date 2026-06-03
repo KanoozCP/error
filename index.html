@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon - Kanooz Central Planning</title>
+    <title>Coming Soon - Central Planning Portal</title>
     
     <!-- Modern Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <!-- Tailwind CSS 4 (via CDN for simplicity) -->
+    <!-- Tailwind CSS 4 -->
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
@@ -29,7 +29,6 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 {
@@ -59,6 +58,30 @@
             box-shadow: 0 1px 2px rgba(0,0,0,0.05);
         }
 
+        .category-title {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1.25rem;
+            text-transform: uppercase;
+            letter-spacing: 0.025em;
+            opacity: 0.8;
+        }
+
+        .category-title::after {
+            content: "";
+            height: 1px;
+            flex-grow: 1;
+            background: #e2e8f0;
+        }
+
+        .header-hidden {
+            transform: translateY(-100%);
+        }
+
         .construction-card {
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(20px);
@@ -75,6 +98,18 @@
         .animate-slow-rotate {
             animation: rotate-slow 20s linear infinite;
         }
+
+        @keyframes spinner {
+            to { transform: rotate(360deg); }
+        }
+        .spinner {
+            width: 1.125rem;
+            height: 1.125rem;
+            border: 2px solid rgba(37, 99, 235, 0.1);
+            border-top-color: #2563eb;
+            border-radius: 50%;
+            animation: spinner 0.6s linear infinite;
+        }
     </style>
 </head>
 <body>
@@ -85,8 +120,8 @@
     </div>
 
     <!-- Header -->
-    <header class="glass-header">
-        <div class="max-w-7xl mx-auto px-6 h-20 md:h-24 flex items-center justify-between w-full">
+    <header id="mainHeader" class="glass-header">
+        <div class="max-w-7xl mx-auto px-6 h-20 md:h-24 flex items-center justify-between">
             <a href="https://kanooz.com/" target="_blank" class="flex items-center gap-4 group">
                 <img src="https://kanooz.com/assets/images/logo.png" alt="Kanooz Logo" class="h-10 md:h-14 transition-transform group-hover:scale-105">
             </a>
@@ -100,8 +135,8 @@
                     </div>
                 </div>
             </div>
-            
-            <a href="https://kanoozcp.github.io/" class="flex items-center gap-2 px-4 py-2.5 bg-white/60 hover:bg-white border border-slate-200 rounded-xl text-slate-600 font-bold text-sm transition-all shadow-sm hover:shadow-md group">
+
+            <a href="./index.html" class="flex items-center gap-2 px-4 py-2.5 bg-white/60 hover:bg-white border border-slate-200 rounded-xl text-slate-600 font-bold text-sm transition-all shadow-sm hover:shadow-md group">
                 <i data-lucide="home" class="w-4 h-4 transition-transform group-hover:scale-110"></i>
                 <span class="hidden sm:inline">Back to Portal</span>
             </a>
@@ -122,7 +157,7 @@
             
             <div class="construction-card mb-10">
                 <p class="text-slate-600 text-lg leading-relaxed mb-8">
-                    This section of <span class="font-bold text-slate-900">Kanooz Central Planning</span> is currently under construction. We are fine-tuning the tools to provide you with the best experience.
+                    This section of <span class="font-bold text-slate-900">Kanooz Central Planning</span> is currently under construction. We are fine-tuning the tools to provide you with the best management experience.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -131,50 +166,84 @@
                         <span>Launching Soon</span>
                     </div>
                     <div class="flex items-center gap-2 px-5 py-2.5 bg-emerald-50 rounded-xl text-emerald-600 text-sm font-bold">
-                        <div class="w-2 bg-emerald-500 rounded-full h-2"></div>
+                        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
                         <span>Stay Tuned</span>
                     </div>
                 </div>
             </div>
 
-            <a href="https://kanoozcp.github.io/" class="inline-flex items-center gap-3 px-10 py-5 bg-slate-900 text-white rounded-2xl font-bold text-sm hover:bg-blue-600 transition-all shadow-xl hover:shadow-blue-500/25 group">
+            <a href="./index.html" class="inline-flex items-center gap-3 px-10 py-5 bg-slate-900 text-white rounded-2xl font-bold text-sm hover:bg-blue-600 transition-all shadow-xl hover:shadow-blue-500/25 group">
                 <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i>
                 Return to Portal
             </a>
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Reduced Footer -->
     <footer class="mt-auto border-t border-slate-200/60 bg-white/30 backdrop-blur-3xl relative z-10 w-full">
         <div class="max-w-7xl mx-auto px-6 py-4 md:py-6">
             <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                
+                <!-- Contact Icons Row -->
                 <div class="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-3">
                     <div class="flex items-center gap-2 group cursor-default">
                         <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i>
                         <span class="text-slate-600 font-medium text-[11px]">Dammam, KSA</span>
                     </div>
+
                     <a href="mailto:Info@kanooz.com" class="flex items-center gap-2 group">
                         <i data-lucide="mail" class="w-3.5 h-3.5 text-blue-500"></i>
                         <span class="text-slate-600 font-medium text-[11px] group-hover:text-blue-600 transition-colors">Info@kanooz.com</span>
                     </a>
+
                     <a href="tel:+96692000043" class="flex items-center gap-2 group">
                         <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-500"></i>
                         <span class="text-slate-600 font-medium text-[11px] group-hover:text-emerald-600 transition-colors">+966 92000043</span>
                     </a>
                 </div>
+
+                <!-- Copyright & Logo -->
                 <div class="flex items-center gap-6">
                     <div class="flex items-center gap-3">
-                        <p class="text-slate-400 text-[10px] font-medium select-none">© 2026 Kanooz Central Planning.</p>
-                        <span class="text-[8px] font-bold text-slate-300 uppercase tracking-[0.2em] px-2 py-0.5 border border-slate-200 rounded-full select-none">v1.0.0</span>
+                        <p class="text-slate-400 text-[10px] font-medium select-none">
+                            © 2026 Kanooz Central Planning.
+                        </p>
+                        <span class="text-[8px] font-bold text-slate-300 uppercase tracking-[0.2em] px-2 py-0.5 border border-slate-200 rounded-full select-none">
+                            v1.0.0
+                        </span>
                     </div>
-                    <img src="https://kanooz.com/assets/images/logo.png" alt="Kanooz" class="h-8 opacity-40 grayscale hover:grayscale-0 transition-opacity">
+                    <a href="https://kanooz-central-planning-35103598616.asia-south1.run.app/" target="_blank" rel="noopener noreferrer" class="inline-block">
+                        <img src="https://kanooz.com/assets/images/logo.png" alt="Kanooz" class="h-8 opacity-40 grayscale hover:grayscale-0 transition-opacity">
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
+        // Initialize Lucide Icons
         lucide.createIcons();
+
+        // Header scroll effect
+        let lastScroll = 0;
+        const header = document.getElementById('mainHeader');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll <= 0) {
+                header.classList.remove('header-hidden');
+                return;
+            }
+
+            if (currentScroll > lastScroll && !header.classList.contains('header-hidden')) {
+                // Scroll down
+                header.classList.add('header-hidden');
+            } else if (currentScroll < lastScroll && header.classList.contains('header-hidden')) {
+                // Scroll up
+                header.classList.remove('header-hidden');
+            }
+            lastScroll = currentScroll;
+        });
     </script>
 </body>
 </html>
