@@ -6,7 +6,9 @@
     <title>Coming Soon - Central Planning Portal</title>
     
     <!-- Modern Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -16,14 +18,15 @@
 
     <style>
         :root {
-            --kcp-indigo: #1e3a8a;
-            --kcp-blue: #2563eb;
-            --kcp-orange: #f97316;
-            --kcp-gradient: linear-gradient(135deg, #1e3a8a, #2563eb, #f97316);
+            --kcp-navy: #2A3478;
+            --kcp-indigo: #2A3478;
+            --kcp-blue: #2A3478;
+            --kcp-terracotta: #C44128;
+            --kcp-gradient: linear-gradient(135deg, #2A3478 0%, #1c245c 45%, #C44128 100%);
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
             background-color: #f8fafc;
             color: #0f172a;
             min-height: 100vh;
@@ -32,7 +35,7 @@
         }
 
         h1, h2, h3, h4 {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
         }
 
         @keyframes kcpGrad {
@@ -88,7 +91,7 @@
             border: 1px solid white;
             border-radius: 2rem;
             padding: 3rem 2rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(42, 52, 120, 0.08);
         }
 
         @keyframes rotate-slow {
@@ -105,8 +108,8 @@
         .spinner {
             width: 1.125rem;
             height: 1.125rem;
-            border: 2px solid rgba(37, 99, 235, 0.1);
-            border-top-color: #2563eb;
+            border: 2px solid rgba(42, 52, 120, 0.1);
+            border-top-color: #2A3478;
             border-radius: 50%;
             animation: spinner 0.6s linear infinite;
         }
@@ -122,8 +125,8 @@
     <!-- Header -->
     <header id="mainHeader" class="glass-header">
         <div class="max-w-7xl mx-auto px-6 h-20 md:h-24 flex items-center justify-between">
-            <a href="https://kanooz.com/" target="_blank" class="flex items-center gap-4 group">
-                <img src="https://kanooz.com/wp-content/uploads/2026/05/Kanooz-Logo-transparent-png-2048x556.png" alt="Kanooz Logo" class="h-10 md:h-14 transition-transform group-hover:scale-105">
+            <a href="https://kanooz.com/" target="_blank" class="flex items-center gap-4 group shrink-0" title="Kanooz">
+                <img src="https://kanooz.com/wp-content/uploads/2026/05/KANOOZ-LOGO-2026-transparent-color-2048x331.avif" alt="Kanooz Logo" class="h-8 sm:h-9 md:h-11 w-auto max-w-[160px] sm:max-w-[210px] md:max-w-[260px] object-contain transition-transform group-hover:scale-105 drop-shadow-sm">
             </a>
 
             <div class="absolute left-1/2 -translate-x-1/2">
@@ -136,7 +139,7 @@
                 </div>
             </div>
 
-            <a href="./index.html" class="flex items-center gap-2 px-4 py-2.5 bg-white/60 hover:bg-white border border-slate-200 rounded-xl text-slate-600 font-bold text-sm transition-all shadow-sm hover:shadow-md group">
+            <a href="https://kanoozcp.github.io/" class="flex items-center gap-2 px-4 py-2.5 bg-white/60 hover:bg-white border border-slate-200 rounded-xl text-slate-600 hover:text-[#2A3478] font-bold text-sm transition-all shadow-sm hover:shadow-md group">
                 <i data-lucide="home" class="w-4 h-4 transition-transform group-hover:scale-110"></i>
                 <span class="hidden sm:inline">Back to Portal</span>
             </a>
@@ -147,17 +150,17 @@
     <main class="flex-1 flex items-center justify-center relative z-10 px-6 py-12">
         <div class="max-w-2xl w-full text-center">
             <div class="mb-10 relative inline-block">
-                <div class="w-24 h-24 bg-blue-500/10 text-blue-600 rounded-[2rem] flex items-center justify-center mx-auto relative z-10">
+                <div class="w-24 h-24 rounded-[2rem] flex items-center justify-center mx-auto relative z-10 shadow-lg" style="background-color: rgba(196, 65, 40, 0.1); color: #C44128;">
                     <i data-lucide="construction" style="width:48px;height:48px"></i>
                 </div>
-                <div class="absolute inset-0 border-2 border-dashed border-blue-200 rounded-[2.5rem] -m-2 opacity-50 animate-slow-rotate"></div>
+                <div class="absolute inset-0 border-2 border-dashed rounded-[2.5rem] -m-2 opacity-50 animate-slow-rotate" style="border-color: rgba(196, 65, 40, 0.3);"></div>
             </div>
 
-            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">Work in Progress</h2>
+            <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 tracking-tight">Work in <span style="color: #C44128;">Progress</span></h2>
             
             <div class="construction-card mb-10">
                 <p class="text-slate-600 text-lg leading-relaxed mb-8">
-                    This section of <span class="font-bold text-slate-900">Kanooz Central Planning</span> is currently under construction. We are fine-tuning the tools to provide you with the best management experience.
+                    This section of <span class="font-bold text-slate-900">Kanooz Central Planning</span> is currently under construction. We are fine-tuning the tools to provide you with the better experience.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -172,7 +175,7 @@
                 </div>
             </div>
 
-            <a href="./index.html" class="inline-flex items-center gap-3 px-10 py-5 bg-slate-900 text-white rounded-2xl font-bold text-sm hover:bg-blue-600 transition-all shadow-xl hover:shadow-blue-500/25 group">
+            <a href="https://kanoozcp.github.io/" class="inline-flex items-center gap-3 px-10 py-5 bg-slate-900 text-white rounded-2xl font-bold text-sm hover:bg-[#2A3478] transition-all shadow-xl hover:shadow-[#2A3478]/25 group">
                 <i data-lucide="arrow-left" class="w-4 h-4 transition-transform group-hover:-translate-x-1"></i>
                 Return to Portal
             </a>
@@ -192,13 +195,13 @@
                     </div>
 
                     <a href="mailto:Info@kanooz.com" class="flex items-center gap-2 group">
-                        <i data-lucide="mail" class="w-3.5 h-3.5 text-blue-500"></i>
-                        <span class="text-slate-600 font-medium text-[11px] group-hover:text-blue-600 transition-colors">Info@kanooz.com</span>
+                        <i data-lucide="mail" class="w-3.5 h-3.5" style="color: #C44128;"></i>
+                        <span class="text-slate-600 font-medium text-[11px] group-hover:text-[#C44128] transition-colors">Info@kanooz.com</span>
                     </a>
 
                     <a href="tel:+96692000043" class="flex items-center gap-2 group">
-                        <i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-500"></i>
-                        <span class="text-slate-600 font-medium text-[11px] group-hover:text-emerald-600 transition-colors">+966 92000043</span>
+                        <i data-lucide="phone" class="w-3.5 h-3.5" style="color: #2A3478;"></i>
+                        <span class="text-slate-600 font-medium text-[11px] group-hover:text-[#2A3478] transition-colors">+966 92000043</span>
                     </a>
                 </div>
 
@@ -212,8 +215,8 @@
                             v1.0.0
                         </span>
                     </div>
-                    <a href="https://kanoozcp.github.io/kcpra/" target="_blank" rel="noopener noreferrer" class="inline-block">
-                        <img src="https://kanooz.com/wp-content/uploads/2026/05/Kanooz-Logo-transparent-png-2048x556.png" alt="Kanooz" class="h-8 opacity-40 grayscale hover:grayscale-0 transition-opacity">
+                    <a href="https://kanoozcp.github.io/kcpra/" target="_blank" rel="noopener noreferrer" class="inline-block" title="Kanooz">
+                        <img src="https://kanooz.com/wp-content/uploads/2026/05/KANOOZ-LOGO-2026-transparent-color-2048x331.avif" alt="Kanooz" class="h-6 md:h-7 w-auto max-w-[140px] md:max-w-[170px] object-contain opacity-75 hover:opacity-100 transition-opacity">
                     </a>
                 </div>
             </div>
